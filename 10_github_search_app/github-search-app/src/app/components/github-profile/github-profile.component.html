@@ -1,0 +1,10 @@
+<div class="container mt-3" *ngIf="profile">
+    <div class="row justify-content-around">
+        <div class="col-md-4">
+            <github-profile-card [userData]="profile"></github-profile-card>
+        </div>
+        <div class="col-md-8">
+            <github-profile-details [userDetails]="profile"></github-profile-details>
+        </div>
+    </div>
+</div>

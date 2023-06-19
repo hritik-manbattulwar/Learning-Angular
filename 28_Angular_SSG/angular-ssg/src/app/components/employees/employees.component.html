@@ -1,0 +1,45 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col">
+            <h3>List of Employees</h3>
+            <p>We hosted this data in github gist then fetching this data using Angular Http Module implemented the logic of fetching in Angular Service.</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid text-center" *ngIf="employees.length>0">
+    <div class="row">
+        <div class="col">
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <!-- <th>SNO</th> -->
+                        <th>EID</th>
+                        <th>IMAGE</th>
+                        <th>NAME</th>
+                        <th>EMAIL</th>
+                        <th>CONTACT</th>
+                        <th>ADDRESS</th>
+                        <th>DESIGNATION</th>
+                        <th>DEPARTMENT</th>
+                        <th>COMPANY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of employees;let index=index">
+                            <!-- <td>{{index+1}}</td> -->
+                            <td>{{employee.eid.substr(employee.eid.length-4)}}</td>
+                            <td><img [src]="employee.picture.large" [alt]="employee.name.first" width="50px" height="50px"></td>
+                            <td><a routerLink="/employees/{{employee.eid}}" class="text-primary "><u>{{employee.name.first}} {{employee.name.last}}</u> </a> </td>
+                            <td>{{employee.bio.email}}</td>
+                            <td>{{employee.bio.mobile}}</td>
+                            <td>{{employee.bio.address.street}}, {{employee.bio.address.city}}, {{employee.bio.address.country}}</td>
+                            <td>{{employee.company.designation}}</td>
+                            <td>{{employee.company.department}}</td>
+                            <td>{{employee.company.companyName}}</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

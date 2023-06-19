@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Hobby Selector Radio (Project 3: *ngSwitch)</h3>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4 mt-3">
+        <div class="form-group form-check">
+          <input name="hobby" [(ngModel)]="hobby" value="eating" type="radio" class="form-check-input"
+            name="exampleRadios" id="exampleRadios1" />
+          <label class="form-check-label" for="exampleRadios1">Eating</label>
+        </div>
+        <div class="form-group form-check">
+          <input name="hobby" [(ngModel)]="hobby" value="coding" type="radio" class="form-check-input"
+            name="exampleRadios" id="exampleRadios2" />
+          <label class="form-check-label" for="exampleRadios2">Coding</label>
+        </div>
+        <div class="form-group form-check">
+          <input name="hobby" [(ngModel)]="hobby" value="sleeping" type="radio" class="form-check-input"
+            name="exampleRadios" id="exampleRadios3" />
+          <label class="form-check-label" for="exampleRadios3">Sleeping</label>
+        </div>
+      </div>
+      <div class="col-md-8 mt-3">
+        <div [ngSwitch]="hobby">
+          <div *ngSwitchCase="'eating'" class="card bg-success animated jello">
+            <div class="card-body">
+              <h1>Eating</h1>
+            </div>
+          </div>
+          <div *ngSwitchCase="'coding'" class="card bg-danger mt-3 animated jello">
+            <div class="card-body">
+              <h1>Coding</h1>
+            </div>
+          </div>
+          <div *ngSwitchCase="'sleeping'" class="card bg-primary mt-3 animated jello">
+            <div class="card-body">
+              <h1>Sleeping</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

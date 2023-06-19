@@ -1,0 +1,11 @@
+.landing-page{
+    background: white url('../../../../assets/img/bg-image-about.jpg')  no-repeat scroll center;
+    background-size: cover;
+    height: 100vh;
+    color: wheat;
+}
+
+.wrapper{
+    background-color: (0,0,0,0.5);
+    height: 100%;;
+}

@@ -1,0 +1,20 @@
+<h3 class="text-center mt-2 bg-primary p-2 text-white">Project 4 (Looping though Array: *ngFor)</h3>
+<div class="row">
+    <!-- <div class="col-md-4" *ngFor="let employee of employees; let indexOfEmployees=index;"> -->
+    <!-- <div class="col-md-4" *ngFor="let employee of employees;  index as indexOfEmployees "> -->
+    <div class="col-md-4" *ngFor="let employee of employees;  let index=index  ">
+
+        <div class="card m-3 text-center">
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">{{index}}</li>
+                    <li class="list-group-item">{{employee.sno}}</li>
+                    <li class="list-group-item">{{employee.name}}</li>
+                    <li class="list-group-item">{{employee.age}}</li>
+                    <li class="list-group-item">{{employee.designation}}</li>
+                    <li class="list-group-item">{{employee.location}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

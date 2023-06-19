@@ -1,0 +1,57 @@
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col">
+      <h3 class="text-center">
+        Fetch Customer using Services and NGRX Effects
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+        dolor consectetur quae! Cupiditate similique quia dolorem quod impedit
+        nisi natus dolorum nam culpa. Mollitia optio cupiditate dolore ipsam
+        harum quidem. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Similique, beatae!
+      </p>
+    </div>
+  </div>
+</div>
+<div *ngIf="loading">
+  <img [src]="spinner" alt="Spinner" />
+</div>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col" *ngIf="customers.length > 0">
+      <table class="table table-hover text-center table-danger table-striped">
+        <thead class="bg-dark text-white">
+          <tr>
+            <th>Index</th>
+            <th>SNO</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody class="table-body">
+          <tr *ngFor="let customer of customers; let index = index">
+            <td>{{ index + 1 }}</td>
+            <td>
+              {{ customer.login.uuid.substr(customer.login.uuid.length - 4) }}
+            </td>
+            <td>
+              <img
+                [src]="customer.picture.large"
+                alt=""
+                style="width: 50px; height: 50px"
+              />
+            </td>
+            <td>{{ customer.name.first }} {{ customer.name.last }}</td>
+            <td>{{ customer.dob.age }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.location.city }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

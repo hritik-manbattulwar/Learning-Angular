@@ -1,0 +1,115 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col">
+            <h3 class="text-secondary display-4 font-weight-bold">Enroll</h3>
+            <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum magni sit facilis quae voluptas aperiam assumenda ab aspernatur optio consectetur perspiciatis aut, impedit eligendi nesciunt recusandae alias quisquam? Laborum, error?</p>
+        </div>
+    </div>
+</div>
+<!-- <pre>{{user | json}}</pre> -->
+<div class="container">
+    <div class="row justify-content-center ">
+        <div class="col-md-6">
+            <!-- Empty Form Alert -->
+        <div *ngIf="isEmpty" class="alert alert-danger alert-dismissible animated zoomIn">
+            <button class="close" data-dismiss="alert">
+              <i class="fa fa-times-circle"></i>
+            </button>
+            <small>Please fill in the fields</small>
+          </div>
+          <!-- Success Alert -->
+          <div *ngIf="isSubmitted" class="alert alert-success alert-dismissible animated zoomIn">
+            <button class="close" data-dismiss="alert">
+              <i class="fa fa-times-circle"></i>
+            </button>
+            <small>{{message}}</small>
+          </div>
+          <!-- API Error Alert -->
+          <div *ngIf="isApiFailed" class="alert alert-danger alert-dismissible animated zoomIn">
+            <button class="close" data-dismiss="alert">
+              <i class="fa fa-times-circle"></i>
+            </button>
+            <small>Sorry API Failed</small>
+          </div>
+            <div  *ngIf="!isSubmitted" class="card">
+                <div class="card-header bg-secondary">
+                    <h3 class="font-weight-bold text-center">Enroll For Online Course</h3>
+                </div>
+                <div class="card-body">
+                    <form #enrollmentForm="ngForm" (submit)="submitEnroll(enrollmentForm)">
+                        <div class="form-group">
+                            <input 
+                            #username="ngModel"
+                            name="username"
+                            [(ngModel)]="user.username"
+                            [class.is-invalid]="username.touched && username.invalid"
+                            [class.is-valid]="username.touched && username.valid"
+                            type="text" class="form-control" placeholder="Enter Name"
+                            pattern="^[a-zA-Z0-9_]+$" required minlength="3" maxlength="10">
+                            <!-- Username invalid -->
+                            <div *ngIf="username.touched && username.invalid">
+                              <small class="text-danger" *ngIf="username.errors?.['required']">Username cannot be empty</small>
+                              <small class="text-danger" *ngIf="username.errors?.['pattern']">Enter a proper Username</small>
+                              <small class="text-danger" *ngIf="username.errors?.['minlength']">Minimum length should be 3</small>
+                            </div>
+                            <small class="text-success" *ngIf="username.touched && username.valid">Looks Good</small>
+                        </div>
+                        <div class="form-group">
+                            <input
+                            #email="ngModel"
+                            name="email"
+                            [class.is-invalid]="email.touched && email.invalid"
+                            [class.is-valid]="email.touched && email.valid"
+                            [(ngModel)]="user.email" 
+                            type="email" class="form-control" placeholder="Enter Email"
+                             pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required >
+                             <!-- Email invalid -->
+                             <div *ngIf="email.touched && email.invalid">
+                              <small class="text-danger" *ngIf="email.errors?.['required']">Email cannot be empty</small>
+                              <small class="text-danger" *ngIf="email.errors?.['pattern']">Enter a proper Email</small>
+                            </div>
+                            <small class="text-success" *ngIf="email.touched && email.valid">Looks Good</small>
+                        </div>
+                        <div class="form-group">
+                            <input 
+                            #password="ngModel"
+                            name="password"
+                            [class.is-invalid]="password.touched && password.invalid"
+                            [class.is-valid]="password.touched && password.valid"
+                            [(ngModel)]="user.password"
+                            type="password" class="form-control" placeholder="Enter Password"
+                             pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$" required>
+                             <div *ngIf="password.touched && password.invalid">
+                              <small class="text-danger" *ngIf="password.errors?.['required']">Password cannot be empty</small>
+                              <small class="text-danger" *ngIf="password.errors?.['pattern']">Enter a proper Password</small>
+                            </div>
+                            <small class="text-success" *ngIf="password.touched && password.valid">Looks Good</small>
+                        </div>
+                        <div class="form-group">
+                            <select
+                            #course="ngModel"
+                            name="course"
+                            [(ngModel)]="user.course"
+                            [class.is-invalid]="course.touched && course.invalid"
+                            [class.is-valid]="course.touched && course.valid"
+                            class="form-control" required>
+                            
+                                <option value="">Select a Course</option>
+                                <option
+                               
+                                *ngFor="let course of courses" [value]="course">{{course}}</option>
+                            </select>
+                            <div *ngIf="course.touched && course.invalid">
+                              <small class="text-danger">Select a Course</small>
+                            </div>
+                            <small *ngIf="course.touched && course.valid" class="text-success">
+                              Looks Good
+                            </small>
+                        </div>
+                        <input type="submit" class="form-control text-center text-dark bg-secondary font-weight-bold" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

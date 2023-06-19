@@ -1,0 +1,35 @@
+<div class="conatiner mt-3">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header aqua-gradient">
+          <h2 class="text-center">Github Search App</h2>
+        </div>
+        <div class="card-body">
+          <form (submit)="submitUser()">
+            <div class="form-group">
+              <input
+                name="user"
+                [(ngModel)]="githubUsername"
+                type="text"
+                class="form-control"
+                placeholder="Enter Github Username"
+              />
+            </div>
+            <input type="submit" class="btn btn-sm btn-secondary" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <github-profile [profile]="githubProfile"></github-profile>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <github-repos [repos]="githubRepos"></github-repos>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col">
+      <h3 class="title text-danger font-weight-bold">
+        {{ title }}
+      </h3>
+      <p class="lead">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam
+        corrupti accusantium doloremque ad consequuntur dolor perferendis
+        eligendi iure. Repellendus, ullam omnis ea quidem ipsum suscipit porro
+        consectetur nostrum natus sequi aspernatur eius aliquam dolor quam vitae
+        debitis quae placeat voluptatibus!
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table table-dark table-hover text-center">
+        <thead class="table-head">
+          <tr>
+            <th>SNO</th>
+            <th>IMAGE</th>
+            <th>NAME</th>
+            <th>PRICE</th>
+            <th>QTY</th>
+            <th>TOTAL</th>
+          </tr>
+        </thead>
+        <tbody class="table-body">
+          <tr>
+            <td>{{ product.id }}</td>
+            <td>
+              <img
+                class="prod-img"
+                [src]="product.image"
+                alt=""
+                style="width: 50px; height: 50px"
+              />
+            </td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td class="prod-qty">
+              <i (click)="incrQty()" class="fa fa-plus-circle mr-2"></i>
+              {{ product.qty }}
+              <i (click)="decrQty()" class="fa fa-minus-circle ml-2"></i>
+            </td>
+            <td>{{ product.qty * product.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

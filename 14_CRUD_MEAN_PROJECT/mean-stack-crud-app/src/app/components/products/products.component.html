@@ -1,0 +1,36 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col">
+            <h3>Product Details Page</h3>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque alias ex minima iusto maiores sunt esse repellendus magnam accusantium exercitationem voluptates sequi odio, minus architecto nobis voluptas quibusdam at, magni eligendi quis sit! Saepe aliquam ipsam incidunt velit totam ducimus!</p>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3 mb-3">
+    <div class="row">
+        <div class="col-md-4 mt-3" *ngFor="let product of products">
+            <div class="card text-center h-100">
+                <div class="card-header">
+                    <img [src]="product.image" [alt]="product.name" class="img-fluid">
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            {{product.name}}
+                        </li>
+                        <li class="list-group-item">
+                            {{product.price}}
+                        </li>
+                        <li class="list-group-item">
+                            {{product.qty}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    {{product.info}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

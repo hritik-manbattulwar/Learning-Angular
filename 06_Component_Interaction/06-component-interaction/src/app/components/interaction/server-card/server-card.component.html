@@ -1,0 +1,20 @@
+<div class="card bg-danger">
+    <div class="card-header">
+        <h3>Server Card</h3>
+    </div>
+    <div class="card-body">
+        <form (submit)="sendTo()">
+            <div class="form-group">
+                <input name="serverData" [(ngModel)]="serverData" type="text" class="form-control"
+                    placeholder="Enter Some Text">
+                <button type="submit" class="btn btn-sm btn-secondary mt-3">Send</button>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer">
+        <h3>
+
+            From Client: {{clientData}}
+        </h3>
+    </div>
+</div>

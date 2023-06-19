@@ -1,0 +1,31 @@
+<h3 class="text-center mt-2 bg-primary p-2 text-white">Component Interaction Ex 1 (How to Send Data from Parent<->Child) using events binding</h3>
+<div class="container-fluid mt-5 mb-3">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <parent-card></parent-card>
+    </div>
+  </div>
+</div>
+
+<h3 class="text-center mt-2 bg-primary p-2 text-white">Component Interaction Ex 2 (How to Send Data from Parent<->Child) using forms binding</h3>
+<div class="container-fluid mt-5 mb-3">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <forms-parent-card></forms-parent-card>
+    </div>
+  </div>
+</div>
+<h3 class="text-center mt-2 bg-primary p-2 text-white">Component Interaction Ex 3</h3>
+<div class="container-fluid mt-5 mb-3">
+  <div class="row justify-content-around">
+    <!-- <p>{{cData | json}}</p> -->
+    <div class="col-md-4">
+      <client-card [serverData]="sData" (sendData)="cData=$event"></client-card>
+    </div>
+    <!-- <p>{{sData | json}}</p> -->
+    <div class="col-md-4">
+      <server-card [clientData]="cData" (sendData)="sData=$event"></server-card>
+    </div>
+  </div>
+</div>
+

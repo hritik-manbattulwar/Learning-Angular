@@ -1,0 +1,10 @@
+<div class="card bg-success">
+    <div class="card-header">
+        <h1>Parent Component</h1>
+    </div>
+    <div class="card-body">
+        <h3>Parent Data: {{parentData}} </h3>
+        <h3>From Child:{{cData}} </h3>
+        <child-card [pData]="parentData" (sendData)="cData=$event"></child-card>
+    </div>
+</div>

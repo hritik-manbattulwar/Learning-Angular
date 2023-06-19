@@ -1,0 +1,31 @@
+<div class="container-fluid mt-3 mb-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h1>{{msg}}</h1>
+                </div>
+                <div class="card-body">
+                    <button (click)="displayMsg('Good Morning')" class="btn btn-sm btn-primary">Morning</button>
+                    <button (click)="displayMsg('Good Afternoon')" class="btn btn-sm btn-success">Afternoon</button>
+                    <button (click)="displayMsg('Good Evening')" class="btn btn-sm btn-danger">Evening</button>
+                    <!-- <button (click)="sayGoodMorning()" class="btn btn-sm btn-primary">Good Morning</button>
+                    <button (click)="sayGoodAfternoon()" class="btn btn-sm btn-success">Good Afternoon</button>
+                    <button (click)="sayGoodEvening()" class="btn btn-sm btn-danger">Good Evening</button> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <app-counter></app-counter>
+        </div>
+        <div class="col-md-4">
+            <app-stopwatch></app-stopwatch>
+        </div>
+    </div>
+    <div class="row mt-3 mb-5">
+        <div class="col ">
+            <product-card></product-card>
+        </div>
+    </div>
+</div>
+

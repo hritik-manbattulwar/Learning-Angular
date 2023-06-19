@@ -1,0 +1,56 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col">
+            <h3>Hobby Selector Structural Directives with NGRX</h3>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, pariatur nulla placeat accusantium laborum nam. Veniam quidem itaque doloribus sequi velit excepturi alias? Autem eius tenetur officia omnis sunt illo ipsa et mollitia quas ullam. Fugit totam id ullam error.</p>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Hobby Selector Checkbox</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 mt-3">
+                            <div class="form-group form-check">
+                                <input  name="eating" (change)="changeEating()" type="checkbox" class="form-check-input" id="eating">
+                                <label class="form-check-label" for="eating">Eating</label>
+                              </div>
+                            <div class="form-group form-check">
+                                <input  name="coding" (change)="changeCoding()"type="checkbox" class="form-check-input" id="coding">
+                                <label class="form-check-label" for="coding">Coding</label>
+                              </div>
+                            <div class="form-group form-check">
+                                <input  name="sleeping" (change)="changeSleeping()" type="checkbox" class="form-check-input" id="sleeping">
+                                <label class="form-check-label" for="sleeping">Sleeping</label>
+                              </div>
+                        </div>
+                        <div class="col-md-8 mt-3 ">
+                            <div *ngIf="eating" class="card bg-success animated jello">
+                                <div  class="card-body ">
+                                    <h1>Eating</h1>
+                                </div>
+                            </div>
+                            <div *ngIf="coding" class="card bg-danger mt-3 animated jello">
+                                <div class="card-body">
+                                    <h1>Coding</h1>
+                                </div>
+                            </div>
+                            <div *ngIf="sleeping" class="card bg-primary mt-3 animated jello">
+                                <div class="card-body">
+                                    <h1>Sleeping</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

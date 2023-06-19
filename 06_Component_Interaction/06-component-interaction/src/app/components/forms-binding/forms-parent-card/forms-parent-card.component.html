@@ -1,0 +1,15 @@
+<div class="card bg-success">
+    <div class="card-header">
+        <h1>Parent Component</h1>
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <input name="data" [(ngModel)]="pData" type="text" class="form-control"
+                    placeholder="Enter Text For Child">
+            </div>
+        </form>
+        <h3>From Child:{{cData}}</h3>
+        <forms-child-card [pData]="pData" (sendData)="cData=$event"></forms-child-card>
+    </div>
+</div>

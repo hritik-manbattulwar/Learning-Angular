@@ -1,0 +1,21 @@
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic beatae blanditiis ducimus harum repellat nulla
+    voluptate! Sed magni consequuntur est ratione, unde, quia aperiam iusto velit perferendis quis officiis eum.</p>
+<button (click)="getData()" class="btn btn-sm btn-secondary mt-3 mb-3">Get Data</button>
+<div class="row">
+    <div class="col-md-4 mt-3 mb-3" *ngFor="let employee of employees">
+        <div class="card text-center">
+            <div class="card-header">
+                <p>{{employee.name.first}} {{employee.name.last}}</p>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><img [src]="employee.picture.large" [alt]="employee.login.uuid"
+                            width="100px" height="100px"></li>
+                    <li class="list-group-item">{{employee.dob.age}}</li>
+                    <li class="list-group-item">{{employee.email}}</li>
+                    <li class="list-group-item">{{employee.location.city}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

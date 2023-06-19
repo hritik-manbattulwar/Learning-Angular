@@ -1,0 +1,30 @@
+<div class="container mt-3 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card" [class.bg-dark]="theme" [class.text-white]="theme">
+        <div class="card-header">
+          <h3 class="font-weight-bold">Dark Theme (Project 4)</h3>
+          <div class="custom-control custom-switch">
+            <input name="theme" [(ngModel)]="theme" type="checkbox" class="custom-control-input" id="customSwitch1" />
+            <label class="custom-control-label" for="customSwitch1">Enable Dark Theme</label>
+          </div>
+        </div>
+        <div class="card-body text-center">
+          <div class="row">
+            <div class="col-md-6">
+              <img [src]="image_1" alt="image_1" class="img-fluid" />
+            </div>
+            <div class="col-md-6">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident, vero optio dolore, neque placeat quia distinctio in
+                rem reprehenderit eum quidem ex dolorum veniam, voluptate
+                voluptatibus assumenda unde inventore. Ab?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

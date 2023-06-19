@@ -1,0 +1,38 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col">
+            <h3>List of Stocks</h3>
+            <p>We hosted this data in github gist then fetching this data using Angular Http Module implemented the logic of fetching in Angular Service.</p>
+        </div>
+    </div>
+</div>
+<div class="container text-center" *ngIf="stocks.length>0">
+    <div class="row">
+        <div class="col">
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th>SNO</th>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>MARKET</th>
+                        <th>SECTOR</th>
+                        <th>SYMBOL</th>
+                        <th>CURRENCY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr *ngFor="let stock of stocks;let index=index">
+                            <td>{{index+1}}</td>
+                            <td>{{stock.id}}</td>
+                            <td><a routerLink="/stocks/{{stock.name}}" class="text-primary"> <u> {{stock.name}}</u> </a> </td>
+                            <td>{{stock.market}}</td>
+                            <td>{{stock.sector}}</td>
+                            <td>{{stock.symbol}}</td>
+                            <td>{{stock.currency}}</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+.search-btn {
+    padding: 0.54rem 1.14rem;
+  }
+  @media (max-width: 780px) {
+  .repo {
+    max-width: 125% !important;
+  }
+  
+  .profile-details{
+    max-width: 125% !important;
+  }
+  .profile-card{
+    max-width: 125% !important;
+  }
+  .search{
+    max-width: 125% !important;
+  }
+  }
+  

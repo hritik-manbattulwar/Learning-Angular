@@ -1,0 +1,37 @@
+Angular Modules
+---------------
+Shopping Cart :
+---------------
+-> root Module : home , navbar , spinner , about
+Ex:
+
+	shoppingcart.com/ -> home
+	shoppingcart.com/about -> about
+	shoppingcart.com/contact -> contact
+
+
+-> Users Module -> login , registration , profile
+Ex:
+
+	shoppingcart.com/users/login -> login
+	shoppingcart.com/users/register -> registration
+	shoppingcart.com/users/profile -> profile
+
+-> Products Module -> mens , womens , kids , upload , product-details
+Ex:
+
+	shoppingcart.com/products/men -> mens collection
+	shoppingcart.com/products/women -> womens collection
+	shoppingcart.com/products/kids -> kids collection
+
+-> Orders Module -> cart , checkout , Order-List
+-> Payments Module -> payments
+
+
+	ng generate module <name> --route <route> --module app.module
+
+angular Routing with Modules
+------------------------------
+Modules : customers , employees , stocks
+
+Lazy loading ->

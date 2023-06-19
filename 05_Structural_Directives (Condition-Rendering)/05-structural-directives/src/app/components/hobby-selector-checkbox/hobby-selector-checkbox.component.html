@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="card-header">
+        <h3>Hobby Selector Checkbox (Project 2: *ngIf)</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4 mt-3">
+                <div class="form-group form-check">
+                    <input name="eating" [(ngModel)]="eating" type="checkbox" class="form-check-input" id="eating">
+                    <label class="form-check-label" for="eating">Eating</label>
+                </div>
+                <div class="form-group form-check">
+                    <input name="coding" [(ngModel)]="coding" type="checkbox" class="form-check-input" id="coding">
+                    <label class="form-check-label" for="coding">Coding</label>
+                </div>
+                <div class="form-group form-check">
+                    <input name="sleeping" [(ngModel)]="sleeping" type="checkbox" class="form-check-input"
+                        id="sleeping">
+                    <label class="form-check-label" for="sleeping">Sleeping</label>
+                </div>
+            </div>
+            <div class="col-md-8 mt-3 ">
+                <div *ngIf="eating" class="card bg-success animated jello">
+                    <div class="card-body ">
+                        <h1>Eating</h1>
+                    </div>
+                </div>
+                <div *ngIf="coding" class="card bg-danger mt-3 animated jello">
+                    <div class="card-body">
+                        <h1>Coding</h1>
+                    </div>
+                </div>
+                <div *ngIf="sleeping" class="card bg-primary mt-3 animated jello">
+                    <div class="card-body">
+                        <h1>Sleeping</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

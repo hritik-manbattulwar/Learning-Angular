@@ -1,0 +1,23 @@
+<h3 class="text-center mt-2 bg-primary p-2 text-white">Project 5 List-Rendering (Looping though Array: *ngFor)</h3>
+<table class="table table-hover text-center table-danger table-striped">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th>SNO</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody class="table-body">
+        <tr *ngFor="let person of persons">
+            <td>{{person.login.uuid.substr(person.login.uuid.length-4)}}</td>
+            <td><img [src]="person.picture.large" alt="" style="width: 50px; height: 50px;"></td>
+            <td>{{person.name.first}} {{person.name.last}}</td>
+            <td>{{person.dob.age}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.location.city}}</td>
+        </tr>
+    </tbody>
+</table>

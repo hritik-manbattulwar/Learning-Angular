@@ -1,0 +1,12 @@
+.landing-page{
+    background: white url('../../../assets/img/bg-image.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    color: rgb(3, 3, 3);
+}
+
+.wrapper{
+    background-color: (0,0,0,0.5);
+    height: 100%;;
+}

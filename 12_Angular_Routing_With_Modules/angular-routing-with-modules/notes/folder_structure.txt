@@ -1,0 +1,36 @@
+folder Structure
+----------------
+app
+   -> root
+		-> components
+			-> navbar
+			-> home -> /
+			-> about -> /about
+			-> contact -> /contact
+		-> models
+		-> services
+   -> customers (ng generate module customers --route customers --module app.module)
+		-> components
+			-> customer-list -> /list
+			-> customer-details -> list/:id
+		-> models
+			-> ICustomer
+		-> services
+			-> customer.service
+	-> employees (ng generate module employees --route employees --module app.module)
+		-> components
+			-> employee-list
+			-> employee-details
+		-> models
+			-> IEmployee
+		-> services
+			-> employee.service
+
+	-> stocks  (ng generate module stocks --route stocks --module app.module)
+		-> components
+			-> stock-list
+			-> stock-details
+		-> models
+			-> IStock
+		-> services
+			-> stock.service

@@ -1,0 +1,22 @@
+<div class="container mt-3 mb-3">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white" >
+                    Change Text (Two Way Data Binding Manual)
+                </div>
+                <div class="card-body">
+                    <form >
+                        <div class="form-group">
+                            <input  (input)="changeUsername($event)" type="text" class="form-control" placeholder="Enter Username">
+                        </div>
+                    </form>
+                    
+                </div>
+                <div class="card-footer">
+                    <p>{{username}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

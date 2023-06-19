@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <!-- <pre> {{selectedEmployee | json}} </pre> -->
+    <h4 class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate obcaecati sapiente
+        necessitatibus assumenda ipsam veritatis fugiat omnis, sunt vitae. Eveniet voluptate provident cupiditate
+        debitis sapiente sed ipsam doloribus modi reiciendis?</h4>
+    <div class="row mt-4 mb-4">
+        <div class="col-md-8 ">
+            <contact-list (sendData)="selectedEmployee=$event"></contact-list>
+        </div>
+        <div class="col-md-4">
+            <contact-card [employee]="selectedEmployee"></contact-card>
+        </div>
+    </div>
+</div>

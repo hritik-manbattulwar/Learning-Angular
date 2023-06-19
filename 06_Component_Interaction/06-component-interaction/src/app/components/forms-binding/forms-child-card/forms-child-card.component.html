@@ -1,0 +1,16 @@
+<div class="card bg-danger">
+    <div class="card-header">
+        <h1>Child Component</h1>
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <input name="cData" [(ngModel)]="cData" (input)="sendTo()" type="text" class="form-control"
+                    placeholder="Enter Text For Parent">
+            </div>
+        </form>
+    </div>
+    <div class="card-footer">
+        <h3>From Parent:{{pData}}</h3>
+    </div>
+</div>

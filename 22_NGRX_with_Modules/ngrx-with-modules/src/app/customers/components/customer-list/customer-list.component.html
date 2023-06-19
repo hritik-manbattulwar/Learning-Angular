@@ -1,0 +1,64 @@
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col">
+      <h3>List of Customers</h3>
+      <p>
+        We hosted this data in github gist then fetching this data using Angular
+        Http Module implemented the logic of fetching in Angular Service.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid text-center" *ngIf="customers.length > 0">
+  <div class="row">
+    <div class="col">
+      <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+            <!-- <th>SNO</th> -->
+            <th>CID</th>
+            <th>IMAGE</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>CONTACT</th>
+            <th>ADDRESS</th>
+            <th>DESIGNATION</th>
+            <th>DEPARTMENT</th>
+            <th>COMPANY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers; let index = index">
+            <td>{{ customer.eid.substr(customer.eid.length - 4) }}</td>
+            <td>
+              <img
+                [src]="customer.picture.large"
+                [alt]="customer.name.first"
+                width="50px"
+                height="50px"
+              />
+            </td>
+            <td>
+              <a
+                routerLink="/customers/customers-list/{{ customer.eid }}"
+                class="text-primary"
+                ><u>{{ customer.name.first }} {{ customer.name.last }}</u>
+              </a>
+            </td>
+            <td>{{ customer.bio.email }}</td>
+            <td>{{ customer.bio.mobile }}</td>
+            <td>
+              {{ customer.bio.address.street }},
+              {{ customer.bio.address.city }},
+              {{ customer.bio.address.country }}
+            </td>
+            <td>{{ customer.company.designation }}</td>
+            <td>{{ customer.company.department }}</td>
+            <td>{{ customer.company.companyName }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
